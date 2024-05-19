@@ -11,7 +11,7 @@ class ProxyMock : public Proxy{
     MOCK_CONST_METHOD2(login, void(std::string, std::string));
 };
 
-Test(Proxy, Mock){
+TEST(Proxy, Mock){
   DataBase database("myDB.db");
   ProxyMock prox("myDB.db");
   //First Test
