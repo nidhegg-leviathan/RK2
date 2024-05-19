@@ -2,7 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "proxy.h"
-#include "database.h"
+#include "databaseparent.h"
 
 class ProxyMock : public Proxy{
     public:
