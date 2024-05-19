@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
-#include "Proxy.cpp"
+#include "proxy.cpp"
 
 class ProxyMock : public Proxy{
     public:
