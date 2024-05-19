@@ -12,7 +12,6 @@ class ProxyMock : public Proxy{
 };
 
 TEST(Proxy, Mock){
-  DataBase database("myDB.db");
   ProxyMock prox("myDB.db");
   //First Test
   prox.login("Me", "MyPassword1234");
@@ -24,4 +23,8 @@ TEST(Proxy, Mock){
   EXPECT_CALL(prox, write("randomstring"));
 
   prox.write("randomstring");
+
+  EXPECT_CALL(prox, read());
+  
+  EXPECT_EQ(prox.read(), "randomstring");
 }
