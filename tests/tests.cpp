@@ -1,5 +1,5 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 #include "proxy.h"
 #include "database.h"
@@ -19,7 +19,6 @@ Test(Proxy, Mock){
   prox.login("Me", "MyPassword1234");
   EXPECT_EQ(prox.read(), "");
   //Second Test
-  ProxyMock prox("myDB.db");
   prox.login("admin", "admin");
   EXPECT_EQ(prox.read(), database.read());
   //Third Test
