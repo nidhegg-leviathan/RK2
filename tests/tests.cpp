@@ -1,6 +1,4 @@
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
-
+#include "gtest/gtest.h"
 #include "proxy.h"
 #include "database.h"
 
@@ -10,12 +8,10 @@ public:
   MOCK_METHOD1(write, void(std::string));
 };
 
-//First test
-
 TEST(ProxyTest, Read_Authenticated) {
   MockDatabase* mockDb = new MockDatabase();
 
-  EXPECT_CALL(*mockDb, read()).Times(1).WillOnce(Return("Data from DB"));
+  EXPECT_CALL(*mockDb, read()).Times(1).WillOnce(testing::Return("Data from DB"));
 
   Proxy proxy("test_db", mockDb); 
   proxy.login("admin", "admin"); 
@@ -27,19 +23,15 @@ TEST(ProxyTest, Read_Authenticated) {
   delete mockDb;
 }
 
-//Second test
-
 TEST(ProxyTest, Read_NotAuthenticated) {
   MockDatabase* mockDb = new MockDatabase();
 
   Proxy proxy("test_db", mockDb); 
-  
+
   std::string result = proxy.read();
 
   ASSERT_EQ(result, "");
 }
-
-//Third test
 
 TEST(ProxyTest, Write_Authenticated) {
   MockDatabase* mockDb = new MockDatabase();
@@ -47,7 +39,7 @@ TEST(ProxyTest, Write_Authenticated) {
   EXPECT_CALL(*mockDb, write("Test data")).Times(1);
 
   Proxy proxy("test_db", mockDb); 
-  proxy.login("admin", "admin");
+  proxy.login("admin", "admin"); 
 
   proxy.write("Test data");
 
