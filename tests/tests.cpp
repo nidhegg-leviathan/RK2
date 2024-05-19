@@ -1,48 +1,27 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+
 #include "proxy.h"
 #include "database.h"
 
-class MockDatabase : public DataBase {
-public:
-  MOCK_METHOD0(read, std::string());
-  MOCK_METHOD1(write, void(std::string));
+class ProxyMock : public Proxy{
+    public:
+    ProxyMock(std::string name) : Proxy(name){}
+    MOCK_METHOD0(read, std::string());
+    MOCK_METHOD1(write, void(std::string));
+    MOCK_CONST_METHOD2(login, void(std::string, std::string));
 };
 
-TEST(ProxyTest, Read_Authenticated) {
-  MockDatabase* mockDb = new MockDatabase();
-
-  EXPECT_CALL(*mockDb, read()).Times(1).WillOnce(testing::Return("Data from DB"));
-
-  Proxy proxy("test_db", mockDb); 
-  proxy.login("admin", "admin"); 
-
-  std::string result = proxy.read();
-
-  ASSERT_EQ(result, "Data from DB");
-
-  delete mockDb;
-}
-
-TEST(ProxyTest, Read_NotAuthenticated) {
-  MockDatabase* mockDb = new MockDatabase();
-
-  Proxy proxy("test_db", mockDb); 
-
-  std::string result = proxy.read();
-
-  ASSERT_EQ(result, "");
-}
-
-TEST(ProxyTest, Write_Authenticated) {
-  MockDatabase* mockDb = new MockDatabase();
-
-  EXPECT_CALL(*mockDb, write("Test data")).Times(1);
-
-  Proxy proxy("test_db", mockDb); 
-  proxy.login("admin", "admin");
-
-  proxy.write("Test data");
-
-  delete mockDb;
+Test(Proxy, Mock){
+  DataBase database("myDB.db");
+  ProxyMock prox("myDB.db");
+  //First Test
+  prox.login("Me", "MyPassword1234");
+  EXPECT_EQ(prox.read(), "");
+  //Second Test
+  ProxyMock prox("myDB.db");
+  prox.login("admin", "admin");
+  EXPECT_EQ(prox.read(), database.read());
+  //Third Test
+  EXPECT_EQ(prox.write("randomstring"), database.write("randomstring"));
 }
