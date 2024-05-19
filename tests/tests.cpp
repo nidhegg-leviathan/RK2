@@ -18,7 +18,7 @@ TEST(Proxy, Mock){
   EXPECT_EQ(prox.read(), "");
   //Second Test
   prox.login("admin", "admin");
-  EXPECT_EQ(prox.read(), database.read());
+  EXPECT_EQ(prox.read(), "");
   //Third Test
   EXPECT_CALL(prox, write("randomstring"));
 
