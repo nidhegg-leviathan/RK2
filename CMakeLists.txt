@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(BUILD_TESTS "Build tests" OFF)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/code)
-include(CPack.cmake)
 
 if(BUILD_TESTS)
   add_compile_options(--coverage)
