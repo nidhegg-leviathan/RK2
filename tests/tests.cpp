@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "gmock/gmock.h"
 #include "proxy.h"
 #include "database.h"
 
@@ -39,7 +40,7 @@ TEST(ProxyTest, Write_Authenticated) {
   EXPECT_CALL(*mockDb, write("Test data")).Times(1);
 
   Proxy proxy("test_db", mockDb); 
-  proxy.login("admin", "admin"); 
+  proxy.login("admin", "admin");
 
   proxy.write("Test data");
 
