@@ -5,14 +5,13 @@
 
 class ProxyMock : public Proxy{
     public:
-    ProxyMock(string databaseName) : Proxy(database){}
+    ProxyMock(string dbName) : Proxy(dbName){}
     MOCK_CONST_METHOD2(login, void(std::string userName, std::string password));
 };
 
 
 TEST(Proxy, Mock){
-    DataBase* database = new DataBase();
-    ProxyMock prox(database);
+    ProxyMock prox("myDB.db");
 
     //First Test
 
