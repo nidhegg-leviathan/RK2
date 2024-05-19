@@ -5,3 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(main main.cpp)
+add_executable(database database.cpp) 
+add_executable(proxy, proxy.cpp)
+add_executable(proxyp, proxy.pro)
