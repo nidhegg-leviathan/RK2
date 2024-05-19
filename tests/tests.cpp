@@ -13,7 +13,8 @@ class ProxyMock : public Proxy{
 };
 
 TEST(Proxy, Mock){
-  ProxyMock prox("myDB.db");
+  std::string name = "myDB.db";
+  ProxyMock prox(name);
   //First Test
   prox.login("Me", "MyPassword1234");
   EXPECT_EQ(prox.read(), "");
