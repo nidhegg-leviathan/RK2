@@ -7,9 +7,9 @@
 class ProxyMock : public Proxy{
     public:
     ProxyMock(std::string name) : Proxy(name){}
-    MOCK_METHOD0(std::string, read);
-    MOCK_METHOD1(void, write, (std::string));
-    MOCK_CONST_METHOD2(void, login, (std::string, std::string));
+    MOCK_METHOD0(read, std::string());
+    MOCK_METHOD1(write, void(std::string));
+    MOCK_CONST_METHOD2(login, void(std::string, std::string));
 };
 
 Test(Proxy, Mock){
