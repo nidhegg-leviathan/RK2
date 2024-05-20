@@ -23,5 +23,3 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "it's solving")
 set(CPACK_GENERATOR "DEB;RPM")
 
 set(CPACK_RPM_PACKAGE_SUMMARY "solves equations")
-
-include(CPack)
