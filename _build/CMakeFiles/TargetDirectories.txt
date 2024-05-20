@@ -1,0 +1,10 @@
+/home/kali/rk2/_build/CMakeFiles/code.dir
+/home/kali/rk2/_build/CMakeFiles/package.dir
+/home/kali/rk2/_build/CMakeFiles/package_source.dir
+/home/kali/rk2/_build/CMakeFiles/edit_cache.dir
+/home/kali/rk2/_build/CMakeFiles/rebuild_cache.dir
+/home/kali/rk2/_build/code/CMakeFiles/main.dir
+/home/kali/rk2/_build/code/CMakeFiles/package.dir
+/home/kali/rk2/_build/code/CMakeFiles/package_source.dir
+/home/kali/rk2/_build/code/CMakeFiles/edit_cache.dir
+/home/kali/rk2/_build/code/CMakeFiles/rebuild_cache.dir

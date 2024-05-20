@@ -1,0 +1,30 @@
++ umask 022
++ cd /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/BUILD
++ mv /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/tmpBBroot
++ RPM_EC=0
++ jobs -p
++ exit 0
++ umask 022
++ cd /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/BUILD
++ /bin/rm -rf /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux
++ /bin/mkdir -p /home/kali/rk2/_build/_CPack_Packages/Linux/RPM
++ /bin/mkdir /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux
++ [ -e /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux ]
++ rm -rf /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux
++ mv /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/tmpBBroot /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux
++ /usr/lib/rpm/brp-compress /usr
++ /usr/lib/rpm/brp-elfperms
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/brp-remove-la-files
++ umask 022
++ cd /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/BUILD
++ RPM_EC=0
++ jobs -p
++ exit 0
++ umask 022
++ cd /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/BUILD
++ RPM_EC=0
++ jobs -p
++ exit 0
