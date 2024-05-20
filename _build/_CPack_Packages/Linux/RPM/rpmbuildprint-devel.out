@@ -1,9 +1,9 @@
 Building target platforms: x86_64
 Building for target x86_64
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.LiQOZU
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.I08pFv
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.fK32sc
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.3e98Ln
 Processing files: print-devel-0.1.1-1.x86_64
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/code-0.1.1-Linux
 Wrote: /home/kali/rk2/_build/_CPack_Packages/Linux/RPM/RPMS/code-0.1.1-Linux.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.zN47Fp
-Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.YZFzxT
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.OsuTZo
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.eiV5xK
