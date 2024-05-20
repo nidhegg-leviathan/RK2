@@ -12,9 +12,7 @@ if(BUILD_TESTS)
   add_compile_options(--coverage)
 endif()
 
-add_library(code STATIC ${CMAKE_CURRENT_SOURCE_DIR}/code/main.cpp)
-add_library(code STATIC ${CMAKE_CURRENT_SOURCE_DIR}/code/proxy.cpp)
-add_library(code STATIC ${CMAKE_CURRENT_SOURCE_DIR}/code/database.cpp)
+add_library(code STATIC ${CMAKE_CURRENT_SOURCE_DIR}/code/main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/code/proxy.cpp ${CMAKE_CURRENT_SOURCE_DIR}/code/database.cpp)
 target_include_directories(code PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/code)
 target_link_libraries(code gcov)
 
