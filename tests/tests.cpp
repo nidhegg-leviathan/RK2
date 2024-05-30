@@ -12,21 +12,21 @@ class ProxyMock : public Proxy{
     MOCK_CONST_METHOD2(login, void(std::string, std::string));
 };
 
-TEST(Proxy, firstTest){
+TEST(ProxyMock, firstTest){
   std::string name = "myDB.db";
   ProxyMock prox(name);
   //First Test
   prox.login("Me", "MyPassword1234");
   EXPECT_EQ(prox.read(), "");
 }
-TEST(Proxy, secondTest){
+TEST(ProxyMock, secondTest){
   std::string name = "myDB.db";
   ProxyMock prox(name);
   //Second Test
   prox.login("admin", "admin");
   EXPECT_EQ(prox.read(), "");
 }
-TEST(Proxy, thirdTest){
+TEST(ProxyMock, thirdTest){
   std::string name = "myDB.db";
   ProxyMock prox(name);
   prox.login("admin", "admin");
