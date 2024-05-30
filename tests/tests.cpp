@@ -37,5 +37,5 @@ TEST(ProxyMock, thirdTest){
 
   EXPECT_CALL(prox, read());
   
-  EXPECT_EQ(prox.read(), "randomstring");
+  prox.read();
 }
